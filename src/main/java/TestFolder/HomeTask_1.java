@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class HomeTask_1 {
 
-    static class HomeTask_1_1 {
+    static class HomeTask_1_1_another_text {
         public static void main(String[] args) {
 
             Scanner scanner = new Scanner(System.in);
