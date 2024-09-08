@@ -15,19 +15,19 @@ public class HomeTask_4 {
         public static void main(String[] args) {
 
             Random random = new Random();
-            int[][][] tridemensionArray = new int[3][2][6];
+            int[][][] threeDimensionalArray = new int[3][2][6];
 
-            for (int i = 0; i < tridemensionArray.length; i++) {
-                for (int j = 0; j < tridemensionArray[i].length; j++) {
-                    for (int k = 0; k < tridemensionArray[i][j].length; k++) {
-                        tridemensionArray[i][j][k] = random.nextInt(-100, 101);
+            for (int i = 0; i < threeDimensionalArray.length; i++) {
+                for (int j = 0; j < threeDimensionalArray[i].length; j++) {
+                    for (int k = 0; k < threeDimensionalArray[i][j].length; k++) {
+                        threeDimensionalArray[i][j][k] = random.nextInt(-100, 101);
                     }
                 }
             }
 
-            for (int i = 0; i < tridemensionArray.length; i++) {
-                for (int j = 0; j < tridemensionArray[i].length; j++) {
-                    System.out.println(Arrays.toString(tridemensionArray[i][j]));
+            for (int i = 0; i < threeDimensionalArray.length; i++) {
+                for (int j = 0; j < threeDimensionalArray[i].length; j++) {
+                    System.out.println(Arrays.toString(threeDimensionalArray[i][j]));
                 }
                 System.out.println();
             }
@@ -36,17 +36,17 @@ public class HomeTask_4 {
             Scanner sc = new Scanner(System.in);
             int increment = sc.nextInt();
 
-            for (int i = 0; i < tridemensionArray.length; i++) {
-                for (int j = 0; j < tridemensionArray[i].length; j++) {
-                    for (int k = 0; k < tridemensionArray[i][j].length; k++) {
-                        tridemensionArray[i][j][k] += increment;
+            for (int i = 0; i < threeDimensionalArray.length; i++) {
+                for (int j = 0; j < threeDimensionalArray[i].length; j++) {
+                    for (int k = 0; k < threeDimensionalArray[i][j].length; k++) {
+                        threeDimensionalArray[i][j][k] += increment;
                     }
                 }
             }
 
-            for (int i = 0; i < tridemensionArray.length; i++) {
-                for (int j = 0; j < tridemensionArray[i].length; j++) {
-                    System.out.println(Arrays.toString(tridemensionArray[i][j]));
+            for (int i = 0; i < threeDimensionalArray.length; i++) {
+                for (int j = 0; j < threeDimensionalArray[i].length; j++) {
+                    System.out.println(Arrays.toString(threeDimensionalArray[i][j]));
                 }
                 System.out.println();
             }
