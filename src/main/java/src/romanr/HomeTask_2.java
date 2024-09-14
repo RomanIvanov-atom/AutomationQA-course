@@ -1,4 +1,4 @@
-package TestFolder;
+package src.romanr;
 
 import java.util.Scanner;
 

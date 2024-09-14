@@ -1,4 +1,4 @@
-package TestFolder;
+package src.romanr;
 
 import java.math.BigDecimal;
 import java.util.Scanner;
