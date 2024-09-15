@@ -11,12 +11,12 @@ public class CreditCard {
         this.currentSum = currentSum;
     }
 
-    public void minusMoney(double minusMoney) {
-        this.currentSum -= minusMoney;
+    public void minusMoney(double money) {
+        this.currentSum -= money;
     }
 
-    public void plusMoney(double plusMoney) {
-        this.currentSum += plusMoney;
+    public void plusMoney(double money) {
+        this.currentSum += money;
     }
 
     public void getInfo() {
