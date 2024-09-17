@@ -1,4 +1,4 @@
-package src.romanr.HomeTask_6;
+package src.romanr.hometask_6;
 
 import java.util.Scanner;
 
