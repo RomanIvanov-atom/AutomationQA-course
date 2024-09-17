@@ -20,6 +20,6 @@ public class Main {
             System.out.println(figures[i]);
             globalPerimeterSumma += figures[i].getPerimeter();
         }
-        System.out.println("Summa of all perimeters = " + globalPerimeterSumma);
+        System.out.println("Summa of all perimeters = " + String.format("%.2f", globalPerimeterSumma));
     }
 }
