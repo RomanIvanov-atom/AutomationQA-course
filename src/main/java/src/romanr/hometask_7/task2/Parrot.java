@@ -24,6 +24,6 @@ public class Parrot extends Bird implements Flyable {
 
     @Override
     public void doAction() {
-
+        Flyable.super.doAction();
     }
 }
