@@ -24,7 +24,7 @@ public abstract class Animal {
         return age;
     }
 
-    public abstract void toEat();
+    public abstract void eat();
     public abstract String toString();
     public abstract void doAction();
 }

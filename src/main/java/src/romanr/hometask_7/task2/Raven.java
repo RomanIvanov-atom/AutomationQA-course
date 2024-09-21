@@ -7,7 +7,7 @@ public class Raven extends Bird implements Flyable {
     }
 
     @Override
-    public void toEat() {
+    public void eat() {
         System.out.println("Raven is eating meat..");
     }
 

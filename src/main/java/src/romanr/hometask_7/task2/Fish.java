@@ -6,7 +6,7 @@ public class Fish extends Animal implements Swimable {
     }
 
     @Override
-    public void toEat() {
+    public void eat() {
         System.out.println("Fish is eating bacteria");
     }
 

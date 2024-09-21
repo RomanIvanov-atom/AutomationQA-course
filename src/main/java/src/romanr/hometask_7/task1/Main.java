@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Figure[] figures = new Figure[5];
         int[] intFigures = new int[5];
-        double globalPerimeterSumma = 0;
+        double globalPerimeterSum = 0;
 
         Random random = new Random();
         for (int i = 0; i < figures.length; i++) {
@@ -18,8 +18,8 @@ public class Main {
                 case 3 -> figures[i] = new Circle(random.nextDouble(1.0, 10.0));
             }
             System.out.println(figures[i]);
-            globalPerimeterSumma += figures[i].getPerimeter();
+            globalPerimeterSum += figures[i].getPerimeter();
         }
-        System.out.println("Summa of all perimeters = " + String.format("%.2f", globalPerimeterSumma));
+        System.out.println("Summa of all perimeters = " + String.format("%.2f", globalPerimeterSum));
     }
 }
