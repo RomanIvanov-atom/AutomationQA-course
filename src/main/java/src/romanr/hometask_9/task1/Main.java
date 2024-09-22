@@ -1,25 +1,89 @@
 package src.romanr.hometask_9.task1;
 
+import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
-    /*
-        Создать массив из 10 объектов, заполненных случайным образом. ENUM??
-        Пройтись по массиву, заставить всех , кто способен,
-        говорить, плавать, летать, гулять.
-        Вывести информацию о каждом животном
-     */
-    public static void main(String[] args) {
+
+    public static void main(String[] args) throws Exception {
 
         Animal[] animals = new Animal[5];
 
-        System.out.println("List of animals:");
         for (int i = 0; i < 5; i++) {
             animals[i] = getRandomAnimal();
-            animals[i].doAction();
-            System.out.println(animals[i].toString() + "\n");
         }
 
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("List of animals:");
+        while (true) {
+            System.out.println(Arrays.toString(animals));
+            System.out.println("Enter number for needed action: ");
+
+            for (UserAction action : UserAction.values()) {
+                System.out.println(action.getCode() + " to " + action.getDescription());
+            }
+
+            int code = scanner.nextInt();
+            UserAction action;
+            try {
+                action = UserAction.valueOf(code);
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+                continue;
+            }
+
+            if (action == UserAction.EXIT) {
+                break;
+            } else {
+                Main.processArray(animals, action);
+            }
+        }
+
+        scanner.close();
+    }
+
+    private static void processArray(Animal[] animals, UserAction action) throws Exception {
+        switch (action) {
+            case FEED_ALL -> {
+                System.out.println("Feeding all...");
+                for (Animal animal : animals) {
+                    animal.eat();
+                }
+            }
+            case DO_ANIMAL_ACTION -> {
+                System.out.println("Result of doing all actions:");
+                for (Animal animal : animals) {
+                    animal.doAction();
+                }
+            }
+            case GET_ALL_INFO -> {
+                System.out.println("All info:");
+                for (Animal animal : animals) {
+                    System.out.println(animal.toString());
+                }
+            }
+            case GET_NAMES -> {
+                System.out.println("All names:");
+                for (Animal animal : animals) {
+                    System.out.println(animal.getName());
+                }
+            }
+            case GET_AGES -> {
+                System.out.println("All ages:");
+                for (Animal animal : animals) {
+                    System.out.println(animal.getAge());
+                }
+            }
+            case GET_IDS -> {
+                System.out.println("All IDs:");
+                for (Animal animal : animals) {
+                    System.out.println(animal.getId());
+                }
+            }
+            default -> throw new Exception("Error found; unexpected action of array");
+        }
     }
 
     private static Animal getRandomAnimal() {
