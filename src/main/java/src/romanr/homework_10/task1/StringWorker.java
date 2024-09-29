@@ -110,6 +110,4 @@ public class StringWorker {
             return "Document number doesn't end with '1a2b'";
         }
     }
-
-
 }
