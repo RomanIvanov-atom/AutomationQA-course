@@ -1,10 +1,11 @@
-package src.romanr.hometask_10.task1;
+package src.romanr.hometask_11.task1;
 
 import java.util.*;
 
 public class Office {
-    private final List<Tea> teaBank = new ArrayList<>();
-    private final List<Employee> employees = new ArrayList<>();
+    private final Stack<Tea> teaBank = new Stack<>();
+    private final Queue<Employee> employees = new LinkedList<>() {
+    };
 
     Random random = new Random();
 
@@ -18,6 +19,9 @@ public class Office {
 
     public void fillTeaBank() {
         int newTeaCount = random.nextInt(10, 21);
+        //очистка банки в начале дня
+        teaBank.clear();
+        //заполнение банки в начале дня
         for (int i = 0; i < newTeaCount; i++) {
             teaBank.add(new Tea(TeaType.getRandomTeaTypeName())); // три типа чая
         }
@@ -25,8 +29,8 @@ public class Office {
         System.out.println("Количество пакетиков чая в начале дня: " + teaBank.size());
     }
 
-    public void simulateDay() {
-        System.out.println("День начинается!");
+    public void simulateDay(int day) {
+        System.out.println("День " + day + " начинается!");
         int totalTeaConsumed = 0;
         int initialTeaCount = teaBank.size();
 
@@ -38,7 +42,7 @@ public class Office {
 
             for (int i = 0; i < teaDesired; i++) {
                 if (!teaBank.isEmpty()) {
-                    Tea tea = teaBank.remove(0);
+                    Tea tea = teaBank.pop();
                     totalTeaConsumed++;
                     teaConsumedByEmployee++;
                     System.out.println(employee.getName() + " выпил " + tea.getType());
@@ -55,7 +59,7 @@ public class Office {
 
         System.out.println("Всего выпито чашек чая: " + totalTeaConsumed);
         System.out.println("Количество оставшихся пакетиков чая в этот день: " + (initialTeaCount - totalTeaConsumed));
-        System.out.println("День закончился!\n");
+        System.out.println("День " + day + " закончился!\n");
     }
 }
 

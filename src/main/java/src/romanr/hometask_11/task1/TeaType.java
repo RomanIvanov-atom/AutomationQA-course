@@ -1,4 +1,4 @@
-package src.romanr.hometask_10.task1;
+package src.romanr.hometask_11.task1;
 
 import java.util.Random;
 
